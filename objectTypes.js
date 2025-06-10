@@ -4,12 +4,12 @@
 // Read more about objects in our JavaScript Objects chapter.
 // Example
 // Try playing around with modifying properties and adding ones to see what happens
-const car = {
+const carA = {
     type: "Toyota",
     model: "Corolla",
     year: 2009
 };
-console.log(car);
+console.log(carA);
 ///////////////////////////////////////////////////////////////////
 // Type Inference
 // TypeScript can infer the types of properties based on their values.
