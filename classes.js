@@ -59,27 +59,43 @@ class Person3 {
 }
 const person3 = new Person3("Jane");
 console.log(person3.getName());
-class Rectangle {
-    // using protected for these members allows access from classes that extend from this class, such as Square
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
-    getArea() {
-        return this.width * this.height;
-    }
-    toString() {
-        return `Rectangle[width=${this.width}, height=${this.height}]`;
-    }
-}
-class Square extends Rectangle {
-    constructor(width) {
-        super(width, width);
-    }
-    // this toString replaces the toString from Rectangle
-    toString() {
-        return `Square[width=${this.width}]`;
-    }
-}
-const mySq = new Square(20);
-console.log(mySq.toString());
+//////////////////////////////////////////////////////////////////////////
+// Inheritance: Implements
+// Interfaces (covered here) can be used to define the type a class must follow through the implements keyword.
+// Example
+// interface Shape {
+//     getArea: () => number;
+// }
+// class Rectangle implements Shape {
+//     public constructor(protected readonly width: number, protected readonly height: number) { }
+//     public getArea(): number {
+//         return this.width * this.height;
+//     }
+// }
+// const myRect = new Rectangle(10, 20);
+// console.log(myRect.getArea());
+//****** ERROR ON LINE 106 ******
+// A class can implement multiple interfaces by listing each one after implements, separated by a comma like so: class Rectangle implements Shape, Colored {
+//////////////////////////////////////////////////////////////////////////
+// Inheritance: Extends
+// Classes can extend each other through the extends keyword. A class can only extends one other class.
+// Example
+// interface Shape {
+//   getArea: () => number;
+// }
+// class Rectangle implements Shape {
+//   public constructor(protected readonly width: number, protected readonly height: number) {} 
+//   public getArea(): number {
+//     return this.width * this.height;
+//   }
+// }
+// class Square extends Rectangle {
+//   public constructor(width: number) {
+//     super(width, width);
+//   }
+//   // getArea gets inherited from Rectangle
+// }
+// const mySq = new Square(20);
+// console.log(mySq.getArea());
+// ERROR ON LINE 134 All declarations of 'width' and 'height' must have identical modifiers.
+//////////////////////////////////////////////////////////////////////
